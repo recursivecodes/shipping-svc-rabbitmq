@@ -1,0 +1,9 @@
+micronaut:
+  application:
+    name: shippingSvcRabbitmq
+  server:
+    port: 8081
+rabbitmq:
+  uri: amqp://rabbitmq.toddrsharp.com:5672
+  username: tsharp
+  password: ${RABBITMQ_PASSWORD}
