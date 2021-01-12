@@ -20,10 +20,12 @@ public class OrderConsumer {
     @Queue("order-queue")
     public Shipment receive(
             Order order) throws InterruptedException {
-        LOG.info("Order received!");
+        LOG.info("Order with ID {} received!", order.getId());
         LOG.info("Creating shipment...");
         /* shipping is slow! */
         Thread.sleep(15*1000);
-        return shippingService.newShipment(order);
+        Shipment shipment = shippingService.newShipment(order);
+        LOG.info("Shipped order {} with shipment ID {}...", order.getId(), shipment.getId());
+        return shipment;
     }
 }

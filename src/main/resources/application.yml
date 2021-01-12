@@ -4,6 +4,6 @@ micronaut:
   server:
     port: 8081
 rabbitmq:
-  uri: amqp://rabbitmq.toddrsharp.com:5672
-  username: tsharp
+  uri: ${RABBITMQ_URI}
+  username: ${RABBITMQ_USERNAME}
   password: ${RABBITMQ_PASSWORD}
